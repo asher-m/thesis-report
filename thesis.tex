@@ -13,6 +13,12 @@
 \usepackage{hyperref}
 \usepackage{listings}
 \usepackage{mathabx}
+\usepackage{siunitx}
+\DeclareSIUnit\solarradius{R_\Sun}
+\DeclareSIUnit\solarmass{M_\Sun}
+\usepackage{setspace}
+\doublespacing
+
 
 \usepackage{graphicx}
 \usepackage{lineno}
@@ -24,29 +30,45 @@
 \begin{document}
 
 
-\title{Searching for the $E^{-3/2}$ Suprathermal Ion Tail in Parker Solar Probe's IS$\Sun$IS Data}
+\title{Searching for the $E^{-3/2}$ Suprathermal Power Law Tail in Parker Solar Probe's IS$\Sun$IS Data}
 \author{A. Merrill}
 \date{\today}
 \maketitle
 
+%\linenumbers
+
 \begin{abstract}
-\lipsum[1]
+The  \textit{Advanced  Composition  Explorer} (ACE)  and  the  \textit{Ulysses}  spacecraft revealed the presence of a common power-law spectrum of ions in the solar wind, the shape of which is independent of solar activity.  The highest energy particles in this distribution are a direct interest to human affairs as they can serve as the seed population for large, destructive events that can harm ground- and air-based equipment.  The mechanisms that create this common distribution are unknown, but by studying the behavior of the spectrum  at  closer  radii  more  can  be  learned  about  their  origin.  Furthermore, this relationship is altogether poorly studied within \SI{1}{\astronomicalunit}.  I investigate the first year and a half of Parker Solar Probe's data to find evidence of this spectrum within \SI{0.3}{\astronomicalunit}. I find weak evidence to suggest the existence of a common spectrum of protons from 60 to \SI{200}{\kilo\electronvolt} inside the region being studied.  Further work is required to uncover the phenomena  in  this  region  that  determine  the  shape  of  the  solar  wind spectra.
 \end{abstract}
 
-\linenumbers
+
 
 \section{Introduction}
 \label{sec:intro}
-A surprising result of the \textit{Advanced Composition Explorer} (ACE) and the \textit{Ulysses} mission is the seemingly ever-present power-law tail in ion distributions of solar wind, even in the absence of solar activity~\citep{Gloeckler_2000}.  These populations of high energy particles are of particular importance to humanity as they can serve to seed possibly destructive high energy events.  Such events are a direct hazard to humans and machines in space, and in extreme circumstances can even pose threats to ground-based equipment.  The shape of the suprathermal tail can also inform us about other accelerating processes in the solar wind which can cause similar threats to humanity.
+The solar wind in regions above \SI{0.3}{\astronomicalunit} has been studied directly~\citep{McComas2007}, and a considerable understanding of the population of solar wind particles and their distribution has been gained about these regions~\citep{Fisk2012,Fisk2006,Fisk2008,Gloeckler2000}.  One particular phenomenon that our current understanding of accelerating processes in the solar wind fails to explain is the existence of an omnipresent power law spectrum of solar wind speed with a spectral index of $-5$; alternatively, this can be expressed as a power law of particle energy with spectral index of $-{3 \over 2}$~\citep{Fisk2012}.
 
-Parker Solar Probe's IS$\Sun$IS EPILo instrument provides never before seen energy resolutions at regimes closer to the sun than any previous spacecraft.  These new measurements allow us to probe for the power-law tail in new regimes, providing insight into the phenomena and mechanisms that create and accelerate these high energy particles.
+Parker Solar Probe (PSP) provides a previously unseen view of the solar wind inside \SI{0.3}{\astronomicalunit}.  In particular, PSP's closer view of the Sun can help explain how the corona is heated and how this power law spectrum is created in the solar wind~\citep{McComas2007}.
 
-\section{A Bunch of Sections to Follow}
-\lipsum[2]
+\subsection{Layers of Protection for the Earth}
+The planets are protected from galactic cosmic radiation by the ever-flowing solar wind that inflates the heliosphere.  
 
-\appendix
-\section{First Section of Appendix}
-\lipsum[3]
+The Parker Solar Probe is uniquely positioned to observe the origin of the solar wind.  Diving from more than 60 to less than \SI{10}{\solarradius}, the spacecraft plunges into the solar corona to observe the phenomena that accelerate the solar wind and inflate the the bubble in the interstellar medium known as the heliosphere~\citep{McComas2014}.
+
+
+
+\section{Analysis}
+\label{sec:analysis}
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+
 
 \bibliographystyle{thesis}
 \bibliography{thesis}
