@@ -48,10 +48,10 @@ The  \textit{Advanced  Composition  Explorer} (ACE)  and  the  \textit{Ulysses} 
 
 \section{Introduction}
 \label{sec:intro}
-The solar wind in regions above \SI{0.3}{\astronomicalunit} has been studied directly~\citep{McComas2007}, and a considerable understanding of the population of solar wind particles and their distributions has been gained about these regions~\citep{Fisk2012,Fisk2006,Fisk2008,Gloeckler2000}.  One particular phenomenon that our current understanding of accelerating processes in the solar wind fails to explain is the existence of an omnipresent power law spectrum of solar wind speed with a spectral index of $-5$; alternatively, this can be expressed as a power law of particle energy with spectral index of $-{3 \over 2}$~\citep{Fisk2012}.
+The solar wind in regions above \SI{0.3}{\astronomicalunit} has been studied directly~\citep{McComas2007}, and a considerable understanding of the population of solar wind particles and their distributions has been gained about these regions~\citep{Giacalone2002,Fisk2012,Fisk2006,Fisk2008,Gloeckler2000}.  One particular phenomenon that our current understanding of accelerating processes in the solar wind fails to explain is the existence of an omnipresent power law spectrum of solar wind speed with a spectral index of $-5$; alternatively, this can be expressed as a power law of particle energy with spectral index of $-{3 \over 2}$~\citep{Fisk2012}.
 
 \subsection{Acceleration of Solar Energetic Particles}
-There are two known mechanisms that accelerate solar energetic particles (SEPs) that are capable of working over a broad spectrum of energies (a few \si{\kilo\electronvolt} to \si{\giga\electronvolt}).  \textit{Implusive} SEPs can result from magnetic-reconnection driven processes occurring during solar flares.  \textit{Gradual} SEP events can be created from coronal mass ejection-driven shocks~\citep{Desai2016}.  
+There are at least two mechanisms that accelerate solar energetic particles (SEPs) that are capable of working over a broad spectrum of energies (a few \si{\kilo\electronvolt} to \si{\giga\electronvolt}).  Implusive SEPs can result from magnetic-reconnection driven processes occurring during solar flares.  Gradual SEP events can be created from coronal mass ejection-driven shocks~\citep{Desai2016}.  However, the mechanics of either of these types of acceleration cannot produce the seemingly omnipresent power-law with index $-{3 \over 2}$.
 
 A seed population of suprathermal particles (ie., \SI{>10}{\kilo\electronvolt}) is responsible for the acceleration of most solar energetic particles (SEPs), rather than the bulk solar wind~\citep{Mewaldt2012}.  The seed population for SEP events is of particular interest to human affairs as large SEP events can cause significant harm to humans and machinery in space and, in extreme circumstances, even those on the ground~\citep{Desai2016}.  This seed population is directly concerned with the power law spectrum seen in the solar wind as the seed population for SEP events is composed of suprathermal ions, the amount of which is dictated by the power law spectrum.  I search for the existence of this spectrum of ions in the solar wind in regions below \SI{0.3}{\astronomicalunit}.
 
@@ -109,9 +109,9 @@ j = j_0 T^{-3 \over 2}.
 \end{equation}
 I attempt to recover this model from fits to the spectra of each event.
 
-The first approach to find evidence of the model in Equation \ref{eqn:flux} fitting the spectra of the events was to simply apply a fit to the data between 40 and \SI{160}{\kilo\electronvolt} of an event-duration- and directionally-averaged spectrum of each event.  This energy region was determined by visual inspection of the events to to fit the region most like a power-law inside the suprathermal region described by \citet{Fisk2008}. This yielded fits like those shown in Figure \ref{fig:naive_fits}.  The exponents fit to these spectra did not well match to the expected $-{3 \over 2}$.
+The first approach to find evidence of the model in Equation \ref{eqn:flux} fitting the spectra of the events was to simply apply a fit to the data between 40 and \SI{160}{\kilo\electronvolt} of an event-duration- and directionally-averaged spectrum of each event.  This energy region was determined by visual inspection of the events to to fit the region most like a power-law inside the suprathermal region described by \citet{Fisk2008}. This yielded fits like those shown in Figure \ref{fig:naive_fits}.  The exponents of these fits did not match well to the expected $-{3 \over 2}$.
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
 \begin{subfigure}{.45\textwidth}
 \centering
@@ -127,23 +127,70 @@ The first approach to find evidence of the model in Equation \ref{eqn:flux} fitt
 \label{fig:naive_fits}
 \end{figure}
 
+Failing to see evidence of the $-{3 \over 2}$ index of the power law, I reconsidered the importance of event type on this predicted observation.  \citet{Fisk2006} point out that the common spectrum appears in populations of charged particles subject to non-shock (ie. quiet time) acceleration, such as in gradual SEP events like those associated with coronal mass ejections.  I analyzed a combination of properties of the magnetic field to distinguish gradual SEP events from others.  
+
+I looked at the strength of the three components of the magnetic field relative to eachother over the duration of each event to classify impulsive versus gradual SEP events.  Because the common index is associated only with gradual quiet-time SEP events, it could be necessary to eliminate events that do not fit that criterion from those being considered.  When analyzing the magnetic field a shock appears as a rapid change in the strength and direction of the magnetic field.  Qualitatively representative samples can be seen in Figure \ref{fig:b_rtn}.  Excluding events which were found to have shock-like features in the magnetic field did not yield improved statistics of the remaining spectra and associated fits.
+
+\begin{figure}[htbp]
+\centering
+\begin{subfigure}{0.7\linewidth}
+\centering
+\includegraphics[width=1.\linewidth]{figures/B_RTN_01.pdf}
+\caption{Event 01. Example of a the spacecraft crossing a shock boundary.  Notice at first the strongest direction of the magnetic field is the normal.  This evolves to be the radial component by the end of the event.}
+\label{fig:b_rtn_01}
+\end{subfigure}
+\begin{subfigure}{0.7\linewidth}
+\centering
+\includegraphics[width=1.\linewidth]{figures/B_RTN_09.pdf}
+\caption{Event 09.  Example of the spacecraft passing through shock-free space.}
+\label{fig:b_rtn_09}
+\end{subfigure}
+\caption{Plots of the three components of B and its magnitude.}
+\label{fig:b_rtn}
+\end{figure}
+
+I also considered magnetic variance acting as a proxy for magnetic turbulence to indicate accelerating processes in the region of the spacecraft.  \citet{Schwadron1996} suggest the statistical quantity $\eta^2$ to act as a proxy of magnetic turbulence.  Magnetic turbulence indicates the relative strength of acceleration associated with magnetic turbulence~\citep{Fisk2006}.  A plot of $\eta^2$ is shown in Figure \ref{fig:eta_squared}.  An association between magnetic variance and spectrum harness was not found.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/etasq_vs_R_events.png}
+\caption{Analysis of variance of magnetic field versus radial distance. \citet{Schwadron1996} propose magnetic variance can be  a  proxy  for  plasma  turbulence.    Color  indicates spectrum hardness, (brighter is harder spectrum, darker is softer), size indicates peak flux.  A possible trend exists such that events closer to the sun have less variance in the magnetic field.  Events indicated at $\eta^2 = 1$~($10^0$) have no associated magnetic field data.}
+\label{fig:eta_squared}
+\end{figure}
 
 
-\section{Discussion}
-\label{sec:discussion}
 
-
-
-\section{Conclusion}
+\section{Discussion \& Conclusion}
 \label{sec:conclusion}
+I analyze proton flux data from Parker Solar Probe's first year and a half to find evidence for the common power law tail described in \citet{Fisk2006}.  I do not find evidence to suggest a common spectrum among these data.
+
+I consider a naive approach without disregarding any event that may include processes originally excluded in \citet{Fisk2006}.  Failing to find the common power law tail here, I then attempt to exclude events based on changes to the magnetic field.  Manually inspecting field data for shocks and excluding associated events does not improve the net statistics of the fits to the event spectra; subsequently analyzing magnetic variance (as a proxy for magnetic turbulence \citep{Schwadron1996}) does not show any patterns in the spectral index, (see Figure \ref{fig:eta_squared}).
+
+
+
+\section{Future Work}
+\label{sec:future}
+This work was limited significantly due to impacts from the COVID-19 pandemic.  Accordingly, many ideas and investigations into the data were never explored because of the newly imposed constraints of working off-campus and at home.  Some extensions to this study could include the following:
+
+\begin{itemize}
+\item Analysis on a moving average of each event may show different results or evidence of the common spectrum.  Upon writing, it became apparent that the spectra of many events harden as time goes on, (ie., the exponent of spectrum, if the range of the spectrum is taken to move in time, increases from more negative to less negative).
+\item Compare events with other authors and observatories and exclude events on this basis.
+\end{itemize}
+
+
 
 \section{Acknowledgments}
-Special thanks to Dana Filoti and James Ryan for their questions during the URC.
+The author wishes to sincerely thank Dr. Jonathan Niehof and Professor Nathan Schwadron for sharing their expertise and guidance throughout the research process, without which this work could not have been accomplished. In addition, the author would like to thank Dr. Dana Filoti and Professor James Ryan for their feedback during the University of New Hampshire Undergraduate Research Conference in Physics.
+
+\bigskip
+
+\noindent This work was supported by NASA Prime Contract No. 136435.
 
 
 
-%\bibliographystyle{thesis}
-\bibliographystyle{abbrv}
+\bibliographystyle{thesis}
+%\bibliographystyle{abbrv}
+%\bibliographystyle{plainnat}
 \bibliography{thesis}
 
 \end{document}
