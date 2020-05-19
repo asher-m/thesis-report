@@ -38,7 +38,7 @@
 \date{\today}
 \maketitle
 
-%\linenumbers
+\linenumbers
 
 \begin{abstract}
 The  \textit{Advanced  Composition  Explorer} (ACE)  and  the  \textit{Ulysses}  spacecraft revealed the presence of a common power-law spectrum of ions in the solar wind, the shape of which is independent of solar activity.  The highest energy particles in this distribution are a direct interest to human affairs as they can serve as the seed population for large, destructive events that can harm ground- and air-based equipment.  The mechanisms that create this common distribution are unknown, but by studying the behavior of the spectrum  at  closer  radii  more  can  be  learned  about  their  origin.  Furthermore, this relationship is altogether poorly studied within \SI{1}{\astronomicalunit}.  I investigate the first year and a half of Parker Solar Probe's data to find evidence of this spectrum in this previously unstudied region. I find weak evidence to suggest the existence of a common spectrum of protons from 60 to \SI{200}{\kilo\electronvolt} inside the region being studied.  Further work is required to uncover the phenomena  in  this  region  that  determine  the  shape  of  the  solar  wind spectra.
@@ -53,13 +53,13 @@ The solar wind in regions above \SI{0.3}{\astronomicalunit} has been studied dir
 \subsection{Acceleration of Solar Energetic Particles}
 There are at least two mechanisms that accelerate solar energetic particles (SEPs) that are capable of working over a broad spectrum of energies (a few \si{\kilo\electronvolt} to \si{\giga\electronvolt}).  Implusive SEPs can result from magnetic-reconnection driven processes occurring during solar flares.  Gradual SEP events can be created from coronal mass ejection-driven shocks~\citep{Desai2016}.  However, the mechanics of either of these types of acceleration cannot produce the seemingly omnipresent power-law with index $-{3 \over 2}$.
 
-A seed population of suprathermal particles (ie., \SI{>10}{\kilo\electronvolt}) is responsible for the acceleration of most solar energetic particles (SEPs), rather than the bulk solar wind~\citep{Mewaldt2012}.  The seed population for SEP events is of particular interest to human affairs as large SEP events can cause significant harm to humans and machinery in space and, in extreme circumstances, even those on the ground~\citep{Desai2016}.  This seed population is directly concerned with the power law spectrum seen in the solar wind as the seed population for SEP events is composed of suprathermal ions, the amount of which is dictated by the power law spectrum.  I search for the existence of this spectrum of ions in the solar wind in regions below \SI{0.3}{\astronomicalunit}.
+A seed population of suprathermal particles (ie. \SI{>10}{\kilo\electronvolt}) is responsible for the acceleration of most solar energetic particles (SEPs), rather than the bulk solar wind~\citep{Mewaldt2012}.  The seed population for SEP events is of particular interest to human affairs as large SEP events can cause significant harm to humans and machinery in space and, in extreme circumstances, even those on the ground~\citep{Desai2016}.  This seed population is directly concerned with the power law spectrum seen in the solar wind as the seed population for SEP events is composed of suprathermal ions, the amount of which is dictated by the power law spectrum.  I search for the existence of this spectrum of ions in the solar wind in regions below \SI{0.3}{\astronomicalunit}.
 
 \subsection{Instrumentation}
 \label{sec:intro:instrumentation}
 Parker Solar Probe (PSP) provides a previously unseen view of the solar wind inside Earth's orbit.  Diving from more than 60 to less than \SI{10}{\solarradius}, the spacecraft plunges into the solar corona to observe the phenomena that accelerate the solar wind and inflate the heliosphere.  In particular, PSP's closer view of the Sun can help explain how the corona is heated and how this power law spectrum is created in the solar wind~\citep{McComas2014,McComas2007}.
 
-I use data from PSP's IS$\Sun$IS EPI-Lo instrument to look for the existence of the common power law tail in these regions close to the Sun.  EPI-Lo is a time-of-flight based mass-spectrometer capable of measuring ions and electrons varying from approximately \SI{20}{\kilo\electronvolt} to \SI{5}{\mega\electronvolt}.  Of interest here are EPI-Lo's specific capabilities surrounding protons, for which the instrument is capable of measuring between 0.04 and \SI{7}{\mega\electronvolt}~\citep{McComas2014}.  EPI-Lo is made of eight \SI{45}{\degree} wedge segments, each of which has 10 entrances for particles to strike a solid state detector.
+I use data from PSP's IS$\Sun$IS EPI-Lo instrument to look for the existence of the common power law tail in these regions close to the Sun.  EPI-Lo is a time-of-flight based mass-spectrometer capable of measuring ions and electrons varying from approximately \SI{20}{\kilo\electronvolt} to \SI{5}{\mega\electronvolt}.  Of interest here are EPI-Lo's specific capabilities surrounding protons, for which the instrument is capable of measuring between 0.04 and \SI{7}{\mega\electronvolt}~\citep{McComas2014}.  EPI-Lo is made of eight \SI{45}{\degree} wedge segments, each of which has 10 entrances for particles to strike a solid state detector.  I use EPI-Lo's Channel T data, which is a time-of-flight (ie. SSD not used) total ion channel calibrated assuming only hydrogen.
 
 %\subsection{Layers of Protection for the Earth}
 %The planets are protected from galactic cosmic radiation by the ever-flowing solar wind that inflates the heliosphere.  
@@ -68,39 +68,20 @@ I use data from PSP's IS$\Sun$IS EPI-Lo instrument to look for the existence of 
 
 \section{Analysis}
 \label{sec:analysis}
-At the time of beginning the analysis, data from the beginning of PSP's flight (end of September 2019) through early January 2020 were available.  Events were selected by plotting a spectrogram of hourly- and directionally-averaged time-of-flight high energy resolution proton fluxes (Channel T Flux in the IS$\Sun$IS EPI-Lo Level 2 dataproducts) against time and energy for the entire duration of time for which data was available.  Fifteen events were found in PSP's data during this time.  The spectrogram from which events were selected is shown in Figure \ref{fig:flux_global}.
+At the time of beginning the analysis, data from the beginning of PSP's flight (end of September 2019) through early January 2020 were available.  Events were selected by plotting a spectrogram of hourly- and directionally-averaged time-of-flight high energy resolution proton fluxes (Channel T Flux in the IS$\Sun$IS EPI-Lo Level 2 dataproducts) against time and energy for the entire duration of time for which data was available.  Fifteen events were found in PSP's data during this time, the parameters for which can be found in Table \ref{tab:params}.  The spectrogram from which events were selected is shown in Figure \ref{fig:flux_global}.  Increased flux is apparent on a periodic basis occurring approximately every 5 months.  This coincides with solar encounters and has little relation to actual events.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=1.\linewidth]{figures/flux_global(notshown).pdf}
+\includegraphics[width=0.9\linewidth]{figures/flux_global.pdf}
 \caption{Flux (j) versus energy and time for the duration of the mission at the time data analysis was started.  Individual events generally lasted for the approximate duration of a few days, making them too small to indicate on the spectrogram.  Notice that solar encounters are visible occurring approximately every 5 months starting in November 2018.}
 \label{fig:flux_global}
 \end{figure}
 
-
-% TODO: Use np_array_to_latex to automate this table construction.
-%Events identified are shown in Table \ref{tab:events}.
-%
-%\begin{tabularx}{\textwidth}{c | c | c | c  | X}
-%Event number & Start time & Stop time & r & Eqn. \ref{eqn:flux} exponent \\
-%\hline
-%00 & 2018-09-25 & 2018-09-25 & radiusasdf & someoate \\
-%01 & 2018-11-11 & 2018-11-12 & radiusasdf & someoate \\
-%02 & 2018-11-15 & 2018-11-19 & radiusasdf & someoate \\
-%03 & 2019-01-31 & 2019-02-01 & radiusasdf & someoate \\
-%04 & 2019-02-13 & 2019-02-18 & radiusasdf & someoate \\
-%05 & 2019-02-18 & 2019-02-19 & radiusasdf & someoate \\
-%06 & 2019-03-06 & 2019-03-08 & radiusasdf & someoate \\
-%07 & 2019-03-13 & 2019-03-15 & radiusasdf & someoate \\
-%08 & 2019-04-02 & 2019-04-03 & radiusasdf & someoate \\
-%09 & 2019-04-04 & 2019-04-04 & radiusasdf & someoate \\
-%10 & 2019-04-17 & 2019-04-18 & radiusasdf & someoate \\
-%11 & 2019-04-20 & 2019-04-23 & radiusasdf & someoate \\
-%12 & 2019-06-19 & 2019-06-21 & radiusasdf & someoate \\
-%13 & 2019-10-22 & 2019-10-26 & radiusasdf & someoate \\
-%14 & 2019-11-13 & 2019-11-16 & radiusasdf & someoate \\
-%\\
-%\end{tabularx}
+\begin{table}[htbp]
+\input{table_params.tex}
+\caption{Parameters of the fifteen events identified.  Events for which magnetic field data was unavailable show n/a for $\eta^2$.}
+\label{tab:params}
+\end{table}
 
 \citet{Fisk2006} suggest a model of compressional acceleration in solar wind turbulence that predicts a functional dependence of flux on energy in the suprathermal tail as
 \begin{equation}
@@ -116,14 +97,14 @@ The first approach to find evidence of the model in Equation \ref{eqn:flux} fitt
 \begin{subfigure}{.45\textwidth}
 \centering
 \includegraphics[width=1.\linewidth]{figures/spectrum_02.pdf}
-\caption{Event 02.  Exponent of -6.97.}
+\caption{Event 2}
 \end{subfigure}
 \begin{subfigure}{.45\textwidth}
 \centering
 \includegraphics[width=1.\linewidth]{figures/spectrum_03.pdf}
-\caption{Event 03.  Exponent of -6.74.}
+\caption{Event 3}
 \end{subfigure}
-\caption{Fits of the spectra from Events 02 and 03.}
+\caption{Fits of the spectra from Events 2 and  3.  Red points on the spectrum of either plot indicate points used for the fit.}
 \label{fig:naive_fits}
 \end{figure}
 
@@ -133,29 +114,40 @@ I looked at the strength of the three components of the magnetic field relative 
 
 \begin{figure}[htbp]
 \centering
-\begin{subfigure}{0.7\linewidth}
+\begin{subfigure}{1.\linewidth}
 \centering
-\includegraphics[width=1.\linewidth]{figures/B_RTN_01.pdf}
-\caption{Event 01. Example of a the spacecraft crossing a shock boundary.  Notice at first the strongest direction of the magnetic field is the normal.  This evolves to be the radial component by the end of the event.}
+\includegraphics[width=0.75\linewidth]{figures/B_RTN_01.pdf}
+\caption{Event 1. Example of a the spacecraft crossing a shock boundary.  Notice at first the strongest direction of the magnetic field is the normal.  This evolves to be the radial component by the end of the event.}
 \label{fig:b_rtn_01}
 \end{subfigure}
-\begin{subfigure}{0.7\linewidth}
+\begin{subfigure}{1.\linewidth}
 \centering
-\includegraphics[width=1.\linewidth]{figures/B_RTN_09.pdf}
-\caption{Event 09.  Example of the spacecraft passing through shock-free space.}
+\includegraphics[width=0.75\linewidth]{figures/B_RTN_09.pdf}
+\caption{Event 9.  Example of the spacecraft passing through shock-free space.}
 \label{fig:b_rtn_09}
 \end{subfigure}
 \caption{Plots of the three components of B and its magnitude.}
 \label{fig:b_rtn}
 \end{figure}
 
-I also considered magnetic variance acting as a proxy for magnetic turbulence to indicate accelerating processes in the region of the spacecraft.  \citet{Schwadron1996} suggest the statistical quantity $\eta^2$ to act as a proxy of magnetic turbulence.  Magnetic turbulence indicates the relative strength of acceleration associated with magnetic turbulence~\citep{Fisk2006}.  A plot of $\eta^2$ is shown in Figure \ref{fig:eta_squared}.  An association between magnetic variance and spectrum harness was not found.
+I also considered magnetic variance acting as a proxy for magnetic turbulence to indicate accelerating processes in the region of the spacecraft.  \citet{Schwadron1996} suggest the statistical quantity $\eta^2$ to act as a proxy of magnetic turbulence.  Magnetic turbulence indicates the relative strength of acceleration associated with magnetic turbulence~\citep{Fisk2006}.  Plots of $\eta^2$ is shown in Figure \ref{fig:etasq}.  An association between magnetic variance and spectrum harness was not found.  However, a pattern showing events at smaller radii to have less magnetic turbulence is observed.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.95\linewidth]{figures/etasq_vs_R_events.png}
-\caption{Analysis of variance of magnetic field versus radial distance. \citet{Schwadron1996} propose magnetic variance can be  a  proxy  for  plasma  turbulence.    Color  indicates spectrum hardness, (brighter is harder spectrum, darker is softer), size indicates peak flux.  A possible trend exists such that events closer to the sun have less variance in the magnetic field.  Events indicated at $\eta^2 = 1$~($10^0$) have no associated magnetic field data.}
-\label{fig:eta_squared}
+\begin{subfigure}{1.\linewidth}
+\centering
+\includegraphics[width=0.9\linewidth]{figures/etasq_vs_R_events.pdf}
+\caption{Variance of magnetic field versus radial distance for each event compared with its peak flux and its spectral index.  Size indicates peak flux, color indicates spectrum hardness. \citet{Schwadron1996} propose magnetic variance $\eta^2$ to be a proxy for plasma turbulence.  It appears that a trend exists such that events closer to the sun have less variance in the magnetic field.}
+\label{fig:etasq_events}
+\end{subfigure}
+\begin{subfigure}{1.\linewidth}
+\centering
+\includegraphics[width=0.9\linewidth]{figures/etasq_vs_R.pdf}
+\caption{Variance of magnetic field versus radial distance for each day included in the analysis, (ie. mid September 2018 to January 2020).  The apparent upper limit of magnetic turbulence as a function of radius seen in Figure \ref{fig:etasq_events} is even more apparent here.}
+\label{fig:etasq_daily}
+\end{subfigure}
+\caption{$\eta^2$ versus radial distance.}
+\label{fig:etasq}
 \end{figure}
 
 
@@ -164,16 +156,16 @@ I also considered magnetic variance acting as a proxy for magnetic turbulence to
 \label{sec:conclusion}
 I analyze proton flux data from Parker Solar Probe's first year and a half to find evidence for the common power law tail described in \citet{Fisk2006}.  I do not find evidence to suggest a common spectrum among these data.
 
-I consider a naive approach without disregarding any event that may include processes originally excluded in \citet{Fisk2006}.  Failing to find the common power law tail here, I then attempt to exclude events based on changes to the magnetic field.  Manually inspecting field data for shocks and excluding associated events does not improve the net statistics of the fits to the event spectra; subsequently analyzing magnetic variance (as a proxy for magnetic turbulence \citep{Schwadron1996}) does not show any patterns in the spectral index, (see Figure \ref{fig:eta_squared}).
+I consider a naive approach without disregarding any event that may include processes originally excluded in \citet{Fisk2006}.  Failing to find the common power law tail here, I then attempt to exclude events based on changes to the magnetic field.  Manually inspecting field data for shocks and excluding associated events does not improve the net statistics of the fits to the event spectra; subsequently analyzing magnetic variance (as a proxy for magnetic turbulence \citep{Schwadron1996}) does not show any patterns in the spectral index, (see Figure \ref{fig:etasq}).
 
 
 
 \section{Future Work}
 \label{sec:future}
-This work was limited significantly due to impacts from the COVID-19 pandemic.  Accordingly, many ideas and investigations into the data were never explored because of the newly imposed constraints of working off-campus and at home.  Some extensions to this study could include the following:
+Some extensions to this study could include the following:
 
 \begin{itemize}
-\item Analysis on a moving average of each event may show different results or evidence of the common spectrum.  Upon writing, it became apparent that the spectra of many events harden as time goes on, (ie., the exponent of spectrum, if the range of the spectrum is taken to move in time, increases from more negative to less negative).
+\item Analysis on a moving average of each event may show different results or evidence of the common spectrum.  Upon writing, it became apparent that the spectra of many events harden as time goes on, (ie. the exponent of spectrum, if the range of the spectrum is taken to move in time, increases from more negative to less negative).
 \item Compare events with other authors and observatories and exclude events on this basis.
 \end{itemize}
 
