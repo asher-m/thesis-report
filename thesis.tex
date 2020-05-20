@@ -16,7 +16,7 @@
 \usepackage{mathabx}
 \usepackage{setspace}
 \doublespacing
-\usepackage{siunitx}
+\usepackage[separate-uncertainty, multi-part-units=single]{siunitx}
 \DeclareSIUnit\solarradius{R_\Sun}
 \DeclareSIUnit\solarmass{M_\Sun}
 \usepackage{subcaption}
@@ -41,22 +41,29 @@
 \linenumbers
 
 \begin{abstract}
-The  \textit{Advanced  Composition  Explorer} (ACE)  and  the  \textit{Ulysses}  spacecraft revealed the presence of a common power-law spectrum of ions in the solar wind, the shape of which is independent of solar activity.  The highest energy particles in this distribution are a direct interest to human affairs as they can serve as the seed population for large, destructive events that can harm ground- and air-based equipment.  The mechanisms that create this common distribution are unknown, but by studying the behavior of the spectrum  at  closer  radii  more  can  be  learned  about  their  origin.  Furthermore, this relationship is altogether poorly studied within \SI{1}{\astronomicalunit}.  I investigate the first year and a half of Parker Solar Probe's data to find evidence of this spectrum in this previously unstudied region. I find weak evidence to suggest the existence of a common spectrum of protons from 60 to \SI{200}{\kilo\electronvolt} inside the region being studied.  Further work is required to uncover the phenomena  in  this  region  that  determine  the  shape  of  the  solar  wind spectra.
+Results from the Advanced Composition Explorer (ACE) and the Ulysses spacecraft suggested the existence of a pervasive common power-law spectrum of ions in the solar wind, the shape of which is independent of solar activity.  The highest energy particles in this distribution are a direct interest to human affairs as they can serve as the seed population for large, destructive events that can harm ground- and air-based equipment.  The mechanisms that create this common distribution are unknown, but by studying the behavior of the spectrum  at  closer  radii  more  can  be  learned  about  their  origin.  Furthermore, this relationship is altogether poorly studied within \SI{1}{\astronomicalunit}.  I investigate the first year and a half of Parker Solar Probe's data to find evidence of this spectrum in this previously unstudied region. I find weak evidence to suggest the existence of a common spectrum of protons from 60 to \SI{200}{\kilo\electronvolt} inside the region being studied.  Further work is required to uncover the phenomena  in  this  region  that  determine  the  shape  of  the  solar  wind spectra.
 \end{abstract}
 
-
+\textbf{Need to note that everyone has so far only looked at big radius, so it may be the case that we see different stuff closer.}
 
 \section{Introduction}
 \label{sec:intro}
 The solar wind in regions above \SI{0.3}{\astronomicalunit} has been studied directly~\citep{McComas2007}, and a considerable understanding of the population of solar wind particles and their distributions has been gained about these regions~\citep{Giacalone2002,Fisk2012,Fisk2006,Fisk2008,Gloeckler2000}.  One particular phenomenon that our current understanding of accelerating processes in the solar wind fails to explain is the existence of an omnipresent power law spectrum of solar wind speed with a spectral index of $-5$; alternatively, this can be expressed as a power law of particle energy with spectral index of $-{3 \over 2}$~\citep{Fisk2012}.
 
-\subsection{Acceleration of Solar Energetic Particles}
-There are at least two mechanisms that accelerate solar energetic particles (SEPs) that are capable of working over a broad spectrum of energies (a few \si{\kilo\electronvolt} to \si{\giga\electronvolt}).  Implusive SEPs can result from magnetic-reconnection driven processes occurring during solar flares.  Gradual SEP events can be created from coronal mass ejection-driven shocks~\citep{Desai2016}.  However, the mechanics of either of these types of acceleration cannot produce the seemingly omnipresent power-law with index $-{3 \over 2}$.
+%\subsection{Acceleration of Solar Energetic Particles}
+%There are at least two signatures seen in solar energetic particle (SEP) events that are seen over a broad spectrum of energies (a few \si{\kilo\electronvolt} to \si{\giga\electronvolt}).  Implusive SEPs can result from magnetic-reconnection driven processes occurring during solar flares.  Gradual SEP events can be created from coronal mass ejection-driven shocks~\citep{Desai2016}.  However, the mechanisms underlying either of these characteristic signatures of the solar wind cannot produce the seemingly omnipresent power-law with index $-{3 \over 2}$.
 
-A seed population of suprathermal particles (ie. \SI{>10}{\kilo\electronvolt}) is responsible for the acceleration of most solar energetic particles (SEPs), rather than the bulk solar wind~\citep{Mewaldt2012}.  The seed population for SEP events is of particular interest to human affairs as large SEP events can cause significant harm to humans and machinery in space and, in extreme circumstances, even those on the ground~\citep{Desai2016}.  This seed population is directly concerned with the power law spectrum seen in the solar wind as the seed population for SEP events is composed of suprathermal ions, the amount of which is dictated by the power law spectrum.  I search for the existence of this spectrum of ions in the solar wind in regions below \SI{0.3}{\astronomicalunit}.
+\subsection{The Seed Population and its Significance}
+Observations from ACE show significant differences in the composition of solar energetic particle (SEP) events and solar wind~\citep{Mewaldt2012}.  Additionally, SEPs have been measured to have densities of ${}^3$He and He${}^+$ much greater than thermal solar wind (ie. ${}^3$He is an ion abundant in flares with energy \SI{>10}{\kilo\electronvolt} and He${}^+$ is an interstellar pickup ion), and thus loan themselves to be used as tracers of the source material of the SEP.  Finally, the heavy ion composition of SEP events correlates significantly with background suprathermal densities.  These results suggest that SEPs draw their source material from the suprathermal region~\citep{Desai2006}.  The population of ions in the suprathermal region responsible for the acceleration of SEP events has been coined the \textit{seed population}.
+
+% ------ Need I expand further in to the exact details of this, or can I leave it to references?
+
+The seed population for SEP events is of particular interest to human affairs as large SEP events can cause significant harm to humans and machinery in space and, in extreme circumstances, even those on the ground~\citep{Desai2016}.  This seed population is directly concerned with the power law spectrum seen in the solar wind as the seed population for SEP events is composed of suprathermal ions, the amount of which is dictated by the power law spectrum.  I search for the existence of this spectrum of ions in the solar wind in regions below \SI{0.3}{\astronomicalunit}.
+
+\subsection{The Quiet Time Spectrum}
+
 
 \subsection{Instrumentation}
-\label{sec:intro:instrumentation}
 Parker Solar Probe (PSP) provides a previously unseen view of the solar wind inside Earth's orbit.  Diving from more than 60 to less than \SI{10}{\solarradius}, the spacecraft plunges into the solar corona to observe the phenomena that accelerate the solar wind and inflate the heliosphere.  In particular, PSP's closer view of the Sun can help explain how the corona is heated and how this power law spectrum is created in the solar wind~\citep{McComas2014,McComas2007}.
 
 I use data from PSP's IS$\Sun$IS EPI-Lo instrument to look for the existence of the common power law tail in these regions close to the Sun.  EPI-Lo is a time-of-flight based mass-spectrometer capable of measuring ions and electrons varying from approximately \SI{20}{\kilo\electronvolt} to \SI{5}{\mega\electronvolt}.  Of interest here are EPI-Lo's specific capabilities surrounding protons, for which the instrument is capable of measuring between 0.04 and \SI{7}{\mega\electronvolt}~\citep{McComas2014}.  EPI-Lo is made of eight \SI{45}{\degree} wedge segments, each of which has 10 entrances for particles to strike a solid state detector.  I use EPI-Lo's Channel T data, which is a time-of-flight (ie. SSD not used) total ion channel calibrated assuming only hydrogen.
@@ -110,25 +117,25 @@ The first approach to find evidence of the model in Equation \ref{eqn:flux} fitt
 
 Failing to see evidence of the $-{3 \over 2}$ index of the power law, I reconsidered the importance of event type on this predicted observation.  \citet{Fisk2006} point out that the common spectrum appears in populations of charged particles subject to non-shock (ie. quiet time) acceleration, such as in gradual SEP events like those associated with coronal mass ejections.  I analyzed a combination of properties of the magnetic field to distinguish gradual SEP events from others.  
 
-I looked at the strength of the three components of the magnetic field relative to eachother over the duration of each event to classify impulsive versus gradual SEP events.  Because the common index is associated only with gradual quiet-time SEP events, it could be necessary to eliminate events that do not fit that criterion from those being considered.  When analyzing the magnetic field a shock appears as a rapid change in the strength and direction of the magnetic field.  Qualitatively representative samples can be seen in Figure \ref{fig:b_rtn}.  Excluding events which were found to have shock-like features in the magnetic field did not yield improved statistics of the remaining spectra and associated fits.
+%I looked at the strength of the three components of the magnetic field relative to eachother over the duration of each event to classify impulsive versus gradual SEP events.  Because the common index is associated only with gradual quiet-time SEP events, it could be necessary to eliminate events that do not fit that criterion from those being considered.  When analyzing the magnetic field a shock appears as a rapid change in the strength and direction of the magnetic field.  Qualitatively representative samples can be seen in Figure \ref{fig:b_rtn}.  Excluding events which were found to have shock-like features in the magnetic field did not yield improved statistics of the remaining spectra and associated fits.
 
-\begin{figure}[htbp]
-\centering
-\begin{subfigure}{1.\linewidth}
-\centering
-\includegraphics[width=0.75\linewidth]{figures/B_RTN_01.pdf}
-\caption{Event 1. Example of a the spacecraft crossing a shock boundary.  Notice at first the strongest direction of the magnetic field is the normal.  This evolves to be the radial component by the end of the event.}
-\label{fig:b_rtn_01}
-\end{subfigure}
-\begin{subfigure}{1.\linewidth}
-\centering
-\includegraphics[width=0.75\linewidth]{figures/B_RTN_09.pdf}
-\caption{Event 9.  Example of the spacecraft passing through shock-free space.}
-\label{fig:b_rtn_09}
-\end{subfigure}
-\caption{Plots of the three components of B and its magnitude.}
-\label{fig:b_rtn}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\begin{subfigure}{1.\linewidth}
+%\centering
+%\includegraphics[width=0.75\linewidth]{figures/B_RTN_01.pdf}
+%\caption{Event 1. Example of a the spacecraft crossing a shock boundary.  Notice at first the strongest direction of the magnetic field is the normal.  This evolves to be the radial component by the end of the event.}
+%\label{fig:b_rtn_01}
+%\end{subfigure}
+%\begin{subfigure}{1.\linewidth}
+%\centering
+%\includegraphics[width=0.75\linewidth]{figures/B_RTN_09.pdf}
+%\caption{Event 9.  Example of the spacecraft passing through shock-free space.}
+%\label{fig:b_rtn_09}
+%\end{subfigure}
+%\caption{Plots of the three components of B and its magnitude.}
+%\label{fig:b_rtn}
+%\end{figure}
 
 I also considered magnetic variance acting as a proxy for magnetic turbulence to indicate accelerating processes in the region of the spacecraft.  \citet{Schwadron1996} suggest the statistical quantity $\eta^2$ to act as a proxy of magnetic turbulence.  Magnetic turbulence indicates the relative strength of acceleration associated with magnetic turbulence~\citep{Fisk2006}.  Plots of $\eta^2$ is shown in Figure \ref{fig:etasq}.  An association between magnetic variance and spectrum harness was not found.  However, a pattern showing events at smaller radii to have less magnetic turbulence is observed.
 
@@ -137,7 +144,7 @@ I also considered magnetic variance acting as a proxy for magnetic turbulence to
 \begin{subfigure}{1.\linewidth}
 \centering
 \includegraphics[width=0.9\linewidth]{figures/etasq_vs_R_events.pdf}
-\caption{Variance of magnetic field versus radial distance for each event compared with its peak flux and its spectral index.  Size indicates peak flux, color indicates spectrum hardness. \citet{Schwadron1996} propose magnetic variance $\eta^2$ to be a proxy for plasma turbulence.  It appears that a trend exists such that events closer to the sun have less variance in the magnetic field.}
+\caption{Variance of magnetic field versus radial distance for each event compared with its peak flux and its spectral index.  Size indicates peak flux, color indicates spectrum hardness. \citet{Schwadron1996} propose magnetic variance $\eta^2$ to be a proxy for plasma turbulence.  It appears that a trend exists such that events closer to the sun have less variance in the magnetic field.  Events for which magnetic field data was not available are not shown.}
 \label{fig:etasq_events}
 \end{subfigure}
 \begin{subfigure}{1.\linewidth}
@@ -150,7 +157,14 @@ I also considered magnetic variance acting as a proxy for magnetic turbulence to
 \label{fig:etasq}
 \end{figure}
 
+I finally considered a relationship between radius and spectral index.  A plot this data can be seen in Figure \ref{fig:specidx_vs_R}.  An apparent ``spectral hardening'' occurs as radius increases: events appear to have less negative power laws when their flows are observed at greater radii.  Furthermore, this seems to be consistent with the relationship between turbulence and radius observed in Figure \ref{fig:etasq}.  This would suggest that as mechanics in the solar wind drive greater and greater turbulence at larger radii, the spectrum hardens as ions accelerate.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.9\linewidth]{figures/specidx_vs_R.pdf}
+\caption{An apparent relation between radial distance R and the spectral index can be seen in the event data.  Locally this relationship can be modeled by a line, though this is demonstrably not the case at greater radii as the spectral index approaches $-{3 \over 2}$~\citep{Fisk2008,Fisk2006}.  This fit suggests that spectral index $-{3 \over 2}$ may be approached by an asymptote with respect to radius.  The linear fit between radius and spectral index has slope \SI{3 \pm 1.5}{\per \astronomicalunit} and intercept \SI{-7 \pm 1.0}{}.}
+\label{fig:specidx_vs_R}
+\end{figure}
 
 \section{Discussion \& Conclusion}
 \label{sec:conclusion}
